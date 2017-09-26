@@ -4,14 +4,11 @@
   hosts: master
   tasks:
   remote_user: root
-  roles:
-    - {role: java, tags: install-java}
 
 - name: "Deploy Digger"
   hosts: master
   remote_user: root
   roles:
-    - {role: java, tags: linux}
     - {role: deploy-jenkins, tags: deploy, deploy-jenkins }
     - {role: android-sdk,  tags: deploy, android-sdk}
     - {role: configure-buildfarm, tags: deploy, configure-buildfarm}
